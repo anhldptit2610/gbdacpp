@@ -51,6 +51,9 @@
     <ClCompile Include="bus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="thirdparty\DearImGui\imgui-master\imconfig.h">
@@ -83,7 +86,7 @@
     <ClInclude Include="bus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="logging.h">
+    <ClInclude Include="logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="timer.h">

@@ -22,6 +22,7 @@
     <ClCompile Include="bus.cpp" />
     <ClCompile Include="cpu.cpp" />
     <ClCompile Include="emulator.cpp" />
+    <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="rom.cpp" />
     <ClCompile Include="thirdparty\DearImGui\imgui-master\backends\imgui_impl_sdl3.cpp" />
@@ -37,7 +38,7 @@
     <ClInclude Include="cpu.h" />
     <ClInclude Include="emulator.h" />
     <ClInclude Include="bus.h" />
-    <ClInclude Include="logging.h" />
+    <ClInclude Include="logger.h" />
     <ClInclude Include="rom.h" />
     <ClInclude Include="thirdparty\DearImGui\imgui-master\backends\imgui_impl_sdl3.h" />
     <ClInclude Include="thirdparty\DearImGui\imgui-master\backends\imgui_impl_sdlrenderer3.h" />
@@ -133,7 +134,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;LOGGER_ENABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\gbdacpp\gbdacpp\thirdparty\DearImGui\imgui-master\backends;C:\Users\Admin\source\repos\gbdacpp\gbdacpp\thirdparty\DearImGui\imgui-master;D:\vc_packages\SDL3-devel-3.2.8-VC\SDL3-3.2.8\include;C:\Users\Admin\source\repos\gbdacpp\vcpkg_installed\vcpkg\pkgs\spdlog_x64-windows\include;C:\Users\Admin\source\repos\gbdacpp\vcpkg_installed\vcpkg\pkgs\fmt_x64-windows\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>

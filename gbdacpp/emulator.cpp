@@ -1,30 +1,29 @@
-#include "emulator.h"
 #include <fstream>
 #include <filesystem>
 #include <string>
+#include "emulator.h"
+#include "logger.h"
 
-#define FMT_HEADER_ONLY
-#include <fmt/core.h>
 
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/basic_file_sink.h>
-
+int Emulator::Load(const char* romPath)
+{
+	return rom.Load(romPath);
+}
 
 void Emulator::Run()
 {
-	auto cpuInstructionLogger = spdlog::basic_logger_mt("cpu instruction", "CpuInstructionLog.txt", true);
-
-	cpuInstructionLogger->set_pattern("%v");
 	while(1) {
-		if (cpu.Step(rom, cpuInstructionLogger) == -1)
+#ifdef LOGGER_ENABLE
+		logger.LogCpuState(cpu.GetCpuState());
+#endif
+		if (cpu.Step(rom) == -1)
 			break;
 	}
 }
 
-Emulator::Emulator(const char* romPath) : rom(romPath, &runnable), bus(&rom), cpu(&bus)
+Emulator::Emulator(const char *romPath) : rom(), bus(&rom), cpu(&bus), logger()
 {
-	if (!runnable)
-		exit(EXIT_FAILURE);
+
 }
 
 Emulator::~Emulator()
